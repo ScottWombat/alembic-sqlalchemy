@@ -1,0 +1,28 @@
+How to setup project
+
+> alembic init migrations
+
+Configure the project
+
+Step 1 - Edit almebic.ini
+
+sqlalchemy.url = sqlite:///my.db
+
+Stem 2 - Edit migration/env.py
+
+from app.base import Base
+target_metadata = Base.metadata
+
+How to run migrations
+
+Step 1
+
+> alembic revision --autogenerate -m 'create user table'
+
+Step 2
+
+> alembic upgrade head
+
+To run sqlite3 shell
+
+> sqlite3 my.db
